@@ -52,7 +52,7 @@ public class API extends Throwable {
         if (!new File(Configuration.minecraftDirectory + "\\config").exists())
             new File(Configuration.minecraftDirectory + "\\config").mkdir();
         try (FileOutputStream fileOutputStream = new FileOutputStream(Configuration.minecraftDirectory + "\\config\\autologin.cfg")) {
-            String autologin = "general {\n    B:\"Auto Login enabled?\"=true\n    S:password=%password%\n}".replace("%password", Configuration.password);
+            String autologin = "general {\n    B:\"Auto Login enabled?\"=true\n    S:password=%password%\n}".replace("%password%", Configuration.password);
             fileOutputStream.write(autologin.getBytes());
         } catch (Exception e) {
             System.out.println(e.toString());
